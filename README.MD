@@ -1,3 +1,7 @@
+
+# English language readme.md
+[English](./readme/README_en.MD)
+
 # Описание
 
 Данный проект позволяет развернуть в Docker MS SQL Server 2017.
@@ -11,7 +15,6 @@
 $git clone https://github.com/lod2007/mssql.git
 ```
 
-[English](./readme/README.MD)
 
 В корне проекта создать файл с переменными окружения .env:
 

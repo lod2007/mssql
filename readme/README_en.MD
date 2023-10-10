@@ -1,50 +1,50 @@
-# Описание
+# Description
 
-Данный проект позволяет развернуть в Docker MS SQL Server 2017.
-За основу взят image: mcr.microsoft.com/mssql/server:2017-latest
-Подробности [по ссылке](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash)
+This project allows you to deploy MS SQL Server 2017 in Docker.
+Based on image: mcr.microsoft.com/mssql/server:2017-latest
+Details [links](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash)
 
 ![WordPress Plugin Version](https://img.shields.io/badge/mssql-2017-green)
 
-Для получения копии этого проекта необходимо клонировать проект к себе на машину командой:
+To get a copy of this project, you need to clone the project to your machine with the command:
 ```
 $git clone https://github.com/lod2007/mssql.git
 ```
 
-В корне проекта создать файл с переменными окружения .env:
+#### Credentials
+In the root of the project, create a file with environment variables .env:
 
-![.env](./img/1.png)
+![.env](../img/1.png)
 
-добавьте в файл .env следующие строки:
+add the following lines to the .env file:
 ```
 MSSQL_SA_PASSWORD=YourStrong@Passw0rd
 ```
-где:
  - MSSQL_SA_PASSWORD - пароль SA (Specify your own strong password that is at least eight characters and meets the SQL Server password requirements. Required setting for the SQL Server image)
 
 #### Volumes
 
- - ./mssql_db/data - каталог с БД
- - ./mssql_db/log - каталог логов
- - ./mssql_db/secrets - каталог секретов
- - ./mssql_db/back_up - каталог для бэкапов. Через этот каталог можно заносить БД в контейнер.
+ - ./mssql_db/data - directory with database
+ - ./mssql_db/log - log directory
+ - ./mssql_db/secrets - catalog of secrets
+ - ./mssql_db/back_up - directory for backups. Through this directory you can enter the database into the container.
 
-### Запуск контейнера
+### Running a container
 ```
 docker-compose up -d
 ```
 
-### Провалиться в контейнер
+### Container inside
 ```
 docker exec -u root -it mssql /bin/bash
 ```
 
-### Установка поумолчанию кирилицы для таблиц 
-Проваливаемся в контейнер
+### Setting the default Cyrillic alphabet for tables
+Container inside
 ```
 docker exec -u root -it mssql /bin/bash
 ```
-Внутри контейнера пробуем выполнить: 
+Inside the container we try to execute:
 ```
 useradd mssql
 chmod -R 777 /var/opt/mssql
