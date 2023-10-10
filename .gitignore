@@ -1,3 +1,11 @@
-mssql_db/*
+mssql_db/back_up/*
+mssql_db/back_up/*
+mssql_db/data/*
+mssql_db/log/*
+mssql_db/secrets/*
 !mssql_db/.gitkeep
+!mssql_db/back_up/.gitkeep
+!mssql_db/data/.gitkeep
+!mssql_db/log/.gitkeep
+!mssql_db/secrets/.gitkeep
 .env
