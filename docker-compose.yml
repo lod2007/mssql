@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: mssql
+    restart: always
+    #privileged: true
+    environment: 
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD="${MSSQL_SA_PASSWORD}"
+      - MSSQL_COLLATION=Cyrillic_General_CI_AS
+    
+    ports:
+      - 1433:1433
+    volumes:
+      - ./mssql_db/data:/var/opt/mssql/data
+      - ./mssql_db/log:/var/opt/mssql/log
+      - ./mssql_db/secrets:/var/opt/mssql/secrets
+      - ./mssql_db/back_up:/back_up
+
+
