@@ -1,7 +1,7 @@
 # Описание
 
 Данный проект позволяет развернуть в Docker MS SQL Server 2017.
-За основу взят image: mcr.microsoft.com/mssql/server:2022-latest
+За основу взят image: mcr.microsoft.com/mssql/server:2017-latest
 Подробности [по ссылке](https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash)
 
 ![WordPress Plugin Version](https://img.shields.io/badge/mssql-2017-green)
