@@ -11,8 +11,6 @@
 $git clone https://github.com/lod2007/mssql.git
 ```
 
-[English](./readme/README.MD)
-
 В корне проекта создать файл с переменными окружения .env:
 
 ![.env](./img/1.png)
